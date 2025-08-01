@@ -1,0 +1,27 @@
+---
+import '../assets/css/global.css';
+import '@fontsource/heebo';
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{ title }</title>
+	</head>
+	<body>
+        <h1> Base Layout </h1>
+		<slot />
+	</body>
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+        }
+    </style>
+</html>
