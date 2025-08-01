@@ -102,3 +102,19 @@ legend {
 input[type='file'] {
 	max-width: 100%;
 }
+
+/* Global HTML and Body styles */
+html {
+    font-size: 100%;
+    font-family: 'Heebo', sans-serif;
+    scroll-behavior: smooth;
+    scroll-margin-top: 5rem;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    scroll-behavior: smooth;
+    scroll-margin-top: 5rem;
+}
