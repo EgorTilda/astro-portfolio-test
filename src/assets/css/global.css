@@ -121,8 +121,7 @@ body {
     scroll-margin-top: 5rem;
 }
 
-/* Utils */
-.container {
+/* Utils */.container {
     max-width: 890px;
     width: 100%;
     padding: 0 15px;
