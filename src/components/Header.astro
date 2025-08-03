@@ -1,0 +1,28 @@
+---
+import Nav from "./Nav.astro"
+---
+
+<header class="header">
+    <div class="container header-row">
+        <Nav />
+    </div>
+</header>
+
+<style>
+    .header {
+        display: block;
+        width: 100%;
+        padding: 2rem 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        background: var(--bg-color);
+        color: var(--dark-color);
+    }
+    .header-row {
+        display: flex;
+        justify-content: flex-end;
+    }
+</style>

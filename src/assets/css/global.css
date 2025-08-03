@@ -27,6 +27,9 @@
 a, a:link, a:visited  {
     text-decoration: none;
 }
+a:visited {
+    color: currentColor; 
+}
 
 a:hover  {
     text-decoration: none;
@@ -106,7 +109,6 @@ input[type='file'] {
 /* Global HTML and Body styles */
 html {
     font-size: 100%;
-    font-family: 'Heebo', sans-serif;
     scroll-behavior: smooth;
     scroll-margin-top: 5rem;
 }
@@ -117,4 +119,22 @@ body {
     color: var(--dark-color);
     scroll-behavior: smooth;
     scroll-margin-top: 5rem;
+}
+
+/* Utils */
+.container {
+    max-width: 890px;
+    width: 100%;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: 1200px) {
+        max-width: 1160px;
+    }
+    @media screen and (max-width: 1024px) {
+        max-width: 980px;
+    }
+    @media screen and (max-width: 576px) {
+        max-width: 100%;
+    }
 }
