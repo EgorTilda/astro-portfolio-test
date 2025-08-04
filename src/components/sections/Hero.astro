@@ -1,0 +1,31 @@
+---
+import Container from "../Container.astro";
+import Avatar from "../Avatar.astro";
+import CTABlock from "../CTABlock.astro";
+
+const {title, desc, textCTA} = Astro.props;
+---
+
+<section class="hero">
+    <Container>
+        <div class="hero-inner">
+            <CTABlock title={title} desc={desc} textCTA={textCTA} />
+
+            <Avatar alt="hero" />
+        </div>
+    </Container>
+</section>
+
+<style>
+    .hero-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+    @media screen and (max-width: 768px) {
+        .hero-inner {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+</style>

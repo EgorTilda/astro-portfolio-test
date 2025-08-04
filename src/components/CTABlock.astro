@@ -1,0 +1,39 @@
+---
+import Button from "./Button.astro";
+
+const {title, desc, textCTA} = Astro.props;
+---
+
+<div class="cta">
+    <h1 class="cta-title">
+        { title }
+    </h1>
+    <p class="cta-desc">
+        { desc }
+    </p>
+    <Button label={ textCTA } />
+</div>
+
+<style>
+    .cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+    }
+    .cta-title {
+        font-size: 2.75rem;
+        font-weight: 700;   
+    }
+    @media screen and (max-width: 768px) {
+        .cta {
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+        .cta-title {
+            font-size: 2rem;
+            line-height: 150%;
+        }
+    }
+</style>

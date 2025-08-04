@@ -1,0 +1,23 @@
+---
+import { Picture } from 'astro:assets';
+import heroImage from '../assets/img/hero.jpg';
+
+const { size, alt } = Astro.props;
+---
+
+<Picture src={heroImage} formats={['webp', 'avif']} alt={alt} width={size} height={size} />
+
+<style define:vars={{ size }}>
+    img {
+        max-width: var(--size);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        box-shadow: -5px 10px 0px #EDF7FA;
+        background: #EDF7FA;
+    }
+    @media screen and (max-width: 425px) {
+        img {
+            max-width: 175px;
+        }
+    }
+</style>
