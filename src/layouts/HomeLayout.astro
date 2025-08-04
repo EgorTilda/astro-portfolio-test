@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}> 
+	<Hero title={frontmatter.hero.title} 
+			desc={frontmatter.hero.desc}
+			textCTA={frontmatter.hero.cta} />
+</BaseLayout>
