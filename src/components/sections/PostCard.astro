@@ -1,0 +1,45 @@
+---
+
+const {title, date, tags} = Astro.props;
+---
+
+<article class="post-card">
+    <h3 class="post-card-title">{title}</h3>
+    <div class="post-card-info">
+        <p class="post-card-date">
+            {date instanceof Date ? date.toLocaleDateString('en-US') : date}
+        </p>    
+        <span class="separator">|</span>
+        <div class="post-card-tags">
+            {tags}
+        </div>
+    </div>
+    <div class="post-card-body">
+        <p>
+            <slot />
+        </p>
+    </div>
+</article>
+
+<style>
+    .post-card {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        border-radius: 4px;
+        background: var(--white-color);
+        color: var(--dark-color);
+    }
+    .post-card-title {
+        font-size: 1.625rem;
+        font-weight: 700;
+    }
+    .post-card-info {
+        display: flex;
+        align-items: center;
+    }
+    .separator {
+        margin: 0 .5rem;
+    }
+</style>

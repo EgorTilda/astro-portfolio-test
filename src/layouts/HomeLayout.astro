@@ -1,12 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/sections/Hero.astro';
+import PostCard from '../components/sections/PostCard.astro';
 
 const { frontmatter } = Astro.props;
+const posts = await getCollection('blog');
 ---
 
-<BaseLayout title={frontmatter.title}> 
+<BaseLayout title={frontmatter.title} desc={frontmatter.desc}> 
 	<Hero title={frontmatter.hero.title} 
 			desc={frontmatter.hero.desc}
 			textCTA={frontmatter.hero.cta} />
+
+	<section style="background: var(--surface-color); padding: 2rem;">
+		<PostCard title="Making a design system from scratch" date="12 Feb 2020" tags="Design, Pattern">
+			Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+		</PostCard>
+	</section>
 </BaseLayout>
+
