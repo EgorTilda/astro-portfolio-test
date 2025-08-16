@@ -4,6 +4,8 @@ import { getCollection } from 'astro:content';
 import WorkCard from './WorkCard.astro';
 import Container from '../Container.astro';
 
+import placeholder from '../../assets/img/img-placeholder.jpeg';
+
 const allWorks = await getCollection('works');
 const sortedWorks = allWorks.sort((workA, workB) => workB.data.pubDate - workA.data.pubDate);
 const featuredWorks = sortedWorks.filter(workItem => workItem.data.isFeatured);
@@ -15,7 +17,7 @@ const featuredWorks = sortedWorks.filter(workItem => workItem.data.isFeatured);
         <div class="featured-works-inner">
             {featuredWorks.map(work => (
                 <WorkCard 
-                        thumb={import(work.data.cover || '../../assets/img/img-placeholder.jpeg')} 
+                        thumb={work.data.cover || placeholder} 
                         title={work.data.title} 
                         desc={work.data.description} 
                         date={work.data.pubDate.getFullYear()}

@@ -5,7 +5,8 @@ const {thumb = '../../assets/img/img-placeholder.jpeg', title = 'Title', desc = 
 ---
 
 <article class="work-card">
-    <Picture src={thumb} formats={['webp']} alt={title} />
+    <!-- <Picture src={thumb} formats={['webp']} alt={title} /> -->
+    <img src={thumb} alt={`thumbnail: ${title}`} loading="lazy" width="246" height="180"/>
 
     <div class="work-card-info">
         <h3 class="work-card-title">{title}</h3>

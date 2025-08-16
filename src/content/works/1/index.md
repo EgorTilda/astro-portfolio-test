@@ -3,7 +3,7 @@ title: "Designing Dashboards"
 description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
 pubDate: 2020-05-12
 tags: ["Dashboard", "Experience Design"]
-cover: '../../assets/img/works/1/cover.png'
+cover: '/img/works/1/cover.webp'
 isFeatured: true
 ---
 
