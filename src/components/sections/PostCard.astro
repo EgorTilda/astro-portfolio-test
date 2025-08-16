@@ -10,9 +10,9 @@ const {title, date, tags} = Astro.props;
             {date instanceof Date ? date.toLocaleDateString('en-US') : date}
         </p>    
         <span class="separator">|</span>
-        <div class="post-card-tags">
-            {tags}
-        </div>
+        <p class="post-card-tags">
+            {tags.join(', ')}
+        </p>
     </div>
     <div class="post-card-body">
         <p>

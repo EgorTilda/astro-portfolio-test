@@ -1,11 +1,12 @@
 ---
-title: "Making a design system from scratch"
+title: "Vibrant Portraits of 2018"
 description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-pubDate: "03 Feb 2020"
-tags: ["Design", "Pattern"]
-heroImage: "/src/assets/img/hero.jpg"
+pubDate: 2018-07-14
+tags: ["Illustration"]
+cover:  '../../assets/img/works/2/cover.png'
+isFeatured: true
 ---
 
-# Making a design system from scratch
+# Vibrant Portraits of 2018
 
 Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.

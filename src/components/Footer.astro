@@ -1,11 +1,36 @@
 ---
+import { getCollection } from 'astro:content';
+
 import Container from "./Container.astro"
+import Copyright from './Copyright.astro';
+
+import socialData from '../data/social.json';
+
 ---
 
 <footer class="footer">
     <Container>
         <div class="footer-inner">
-            footer
+            <div class="footer-social">
+                {socialData.map((socialItem) => (
+                    <a href={socialItem.href} class="social">
+                        <img class="social-icon" src={socialItem.icon} alt={socialItem.name} loading="lazy" />
+                    </a>
+                ))}
+            </div>
+            <Copyright />
         </div>
     </Container>
 </footer>
+
+<style>
+    .footer {
+        padding: 3.375rem 0;
+    }
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 2.2rem;
+        margin-bottom: 1.625rem;
+    }
+</style>

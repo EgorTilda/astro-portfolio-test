@@ -1,0 +1,70 @@
+---
+import { Picture } from 'astro:assets';
+
+const {thumb = '../../assets/img/img-placeholder.jpeg', title = 'Title', desc = 'Description', date = new Date().getFullYear(), tags} = Astro.props;
+---
+
+<article class="work-card">
+    <Picture src={thumb} formats={['webp']} alt={title} />
+
+    <div class="work-card-info">
+        <h3 class="work-card-title">{title}</h3>
+        <div class="work-card-meta">
+            <span class="work-year">{date}</span>
+            <span class="work-tags">
+                {tags.join(', ')}
+            </span>
+        </div>
+        <p class="work-card-desc">{desc}</p>
+    </div>
+</article>
+
+<style>
+    .work-card {
+        display: flex;
+        gap: 1.2rem;
+        border-bottom: 2px solid #E0E0E0;
+        padding: 2.188rem 0;
+    }
+    .work-card-title {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .work-card-meta {
+        margin-bottom: 1rem;
+    }
+    .work-year {
+        border-radius: 1rem;
+        padding: 1.5px .5rem;
+        background: #142850;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+        margin-right: .5rem;
+    }
+    .work-tags {
+        color: var(--light-color);
+    }
+    img {
+        border-radius: 6px;
+        width: 246px;
+        min-width: 246px;
+        height: 180px;
+        object-fit: cover;
+        background-color: var(--surface-color);
+        background-image: url('../../assets/img/img-placeholder.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    @media screen and (max-width: 640px) {
+        .work-card {
+            flex-direction: column;
+        }
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+</style>

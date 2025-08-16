@@ -1,18 +1,24 @@
-// 1. Импортируйте утилиты из `astro:content`
-import { defineCollection, z } from 'astro:content';
+// src/content.config.ts
+import { defineCollection, z } from "astro:content";
+import { glob, file } from "astro/loaders";
 
-// 2. Импортируйте загрузчик(и)
-import { glob, file } from 'astro/loaders';
-
-// 3. Определите свои коллекции
-const blog = defineCollection({ 
-    loader: glob({pattern: '**/*.md', base: './src/content/blog'}),
-    // schema: /* ... */
-});
-const dogs = defineCollection({ 
-    loader: file('src/data/dogs.json'),
-    // schema: /* ... */
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  schema: z.object({
+    title: z.string().optional(),
+  }),
 });
 
-// 4. Экспортируйте объект `collections` для регистрации ваших коллекций
-export const collections = { blog, dogs };
+const works = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/works" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    tags: z.array(z.string()),
+    cover: z.string().optional(),
+    isFeatured: z.coerce.boolean(),
+  }),
+});
+
+export const collections = { blog, works };

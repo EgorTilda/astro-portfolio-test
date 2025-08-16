@@ -5,7 +5,7 @@ import heroImage from '../assets/img/hero.jpg';
 const { size, alt } = Astro.props;
 ---
 
-<Picture src={heroImage} formats={['webp', 'avif']} alt={alt} width={size} height={size} />
+<Picture src={heroImage} formats={['webp', 'avif']} alt={alt} width={size} height={size} loading="eager"/>
 
 <style define:vars={{ size }}>
     img {

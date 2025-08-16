@@ -1,0 +1,56 @@
+---
+import PostCard from "./PostCard.astro";
+import Container from "../Container.astro";
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((postA, postB) => postA.data.pubDate - postB.data.pubDate);
+const recentPosts = sortedPosts.slice(0, 2);
+---
+
+<section class="posts">
+    <Container>
+        <div class="posts__innner">
+                <div class="posts-top">
+                    <h2 class="posts-title">Recent posts</h2>
+                    <a href="/blog" class="posts-link">View all</a>
+                </div>
+
+                <div class="posts-row">
+                    {recentPosts.map( (post) => (
+                        <PostCard title={post.data.title} date={post.data.pubDate} tags={post.data.tags}>
+                            <p>{post.data.description}</p>
+                        </PostCard>
+                    ))}
+                </div>
+        </div>
+    </Container>
+</section>
+
+<style>
+    .posts {
+        padding: 2rem 0;
+        background: var(--surface-color);
+    }
+    .posts-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+    }
+    .posts-title {
+        font-size: 1.25rem;
+    }
+    .posts-link {
+        color: var(--secondary-color);
+    }
+    .posts-row {
+        display: flex;
+        gap: 1.25rem;
+    }
+    @media screen and (max-width: 670px) {
+        .posts-row {
+            flex-direction: column;
+        }
+    }
+</style>

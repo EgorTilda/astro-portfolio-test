@@ -1,7 +1,7 @@
 ---
 title: "Creating pixel perfect icons in Figma"
-description: "Creating pixel perfect icons in Figma"
-pubDate: "05 Feb 2020"
+description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+pubDate: "02 Feb 2020"
 tags: ["Figma", "Icon Design"]
 heroImage: "/src/assets/img/hero.jpg"
 ---
