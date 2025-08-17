@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WorkCard from '../../components/sections/WorkCard.astro';
+import Container from '../../components/Container.astro';
+
+import placeholder from '../../assets/img/img-placeholder.jpeg';
+
+const posts = await getCollection('works');
+---
+
+<BaseLayout title="Work" desc="Works page description">
+    <Container>
+        <h2>Work</h2>
+
+        <div class="work-posts">
+            {posts.map((work) => (
+                <WorkCard thumb={work.data.cover || placeholder} 
+                        title={work.data.title} 
+                        desc={work.data.description} 
+                        date={work.data.pubDate.getFullYear()}
+                        tags={work.data.tags} />
+            ) )}
+        </div>
+    </Container>
+</BaseLayout>
+
+<style>
+    h2 {
+        font-size: 2.75rem;
+        font-weight: 700;
+    }
+    .work-posts {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2.5rem;
+    }
+</style>

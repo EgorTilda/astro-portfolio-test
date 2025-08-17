@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+import Container from '../../components/Container.astro';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((postA, postB) => postA.data.pubDate - postB.data.pubDate );
+---
+
+<BaseLayout title="Blog" desc="Blog page description">
+    <Container>
+        <h2>Blog</h2>
+
+        <div class="blog-posts">
+            {sortedPosts.map((post) => (
+                <BlogPost post={post} />
+            ) )}
+        </div>
+    </Container>
+</BaseLayout>
+
+<style>
+    h2 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+    }
+    .blog-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+</style>

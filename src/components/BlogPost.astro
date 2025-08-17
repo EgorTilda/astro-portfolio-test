@@ -1,0 +1,46 @@
+---
+const {post} = Astro.props;
+---
+
+<article class="post">
+    <a href="/" class="post-link">
+        <h3>{ post.data.title }</h3>
+    </a>
+    <div class="post-data">
+        <p class="post-date">{ post.data.pubDate.toDateString() }</p>
+        <span class="separator">|</span>
+        <p class="post-tags">
+            { post.data.tags.join(', ') }
+        </p>
+    </div>
+    <p class="post-desc">
+       { post.data.description } 
+    </p>
+</article>
+
+<style>
+    .post {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #E0E0E0;
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .post-data {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+    }
+    .post-tags {
+        color: var(--light-color);
+    }
+    @media screen and (max-width: 640px) {
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+</style>

@@ -1,7 +1,7 @@
 ---
 title: "Post 3"
 description: "Test post"
-pubDate: "01 Feb 2020"
+pubDate: 2020-03-01
 tags: ["Design", "Pattern"]
 heroImage: "/src/assets/img/hero.jpg"
 ---
